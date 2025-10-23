@@ -4,7 +4,7 @@ import random
 
 # Parâmetros
 alvo = "0000000000000000"
-populacao_tamanho = 100
+populacao_tamanho = 2
 mutacao_taxa = 0.01
 geracoes = 1000
 
@@ -43,7 +43,7 @@ def selecionar(populacao: list[list[str]]):
     """
 
     populacao.sort(key= lambda x: fitness(x), reverse=True)
-    top_20_porcent = int(0.2 * populacao_tamanho)
+    top_20_porcent = max(2, int(0.2 * populacao_tamanho))
     return populacao[:top_20_porcent]
 
 def crossover(parent1, parent2):
